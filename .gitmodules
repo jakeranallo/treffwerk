@@ -1,0 +1,6 @@
+[submodule "apps/demo-radar"]
+	path = apps/demo-radar
+	url = https://github.com/treffwerk/demo-radar.git 
+[submodule "tools/trefflesen"]
+	path = tools/trefflesen
+	url = https://github.com/jakeranallo/trefflesen.git
