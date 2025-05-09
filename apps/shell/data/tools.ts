@@ -53,4 +53,17 @@ export const tools: ToolManifest[] = [
     tags: ["community", "events", "activism"],
     category: "community",
   },
+  {
+    id: "trefflesen",
+    name: "Trefflesen",
+    description: "A Next.js-based tool for managing and organizing tasks",
+    version: "1.0.0",
+    icon: "📝",
+    entry: "tools/trefflesen",
+    author: "Jake Ranallo",
+    homepage: "https://github.com/jakeranallo/trefflesen",
+    languages: ["en"],
+    tags: ["productivity", "tasks"],
+    category: "productivity",
+  },
 ]

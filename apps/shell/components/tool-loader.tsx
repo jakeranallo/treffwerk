@@ -8,6 +8,9 @@ import { getToolById } from "@/lib/tools"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { useI18n } from "@/components/i18n-provider"
 
+// Import all tools statically
+import TrefflesenWrapper from "./tools/trefflesen-wrapper"
+
 interface ToolLoaderProps {
   toolId: string
 }
@@ -29,7 +32,16 @@ export function ToolLoader({ toolId }: ToolLoaderProps) {
         }
 
         // Load the tool's entry point
-        const module = await import(/* @vite-ignore */ tool.entry)
+        let module
+        switch (toolId) {
+          case "trefflesen":
+            module = { default: TrefflesenWrapper }
+            break
+          // Add other tools here as needed
+          default:
+            throw new Error(t("tools.error.notFound"))
+        }
+        
         setToolComponent(() => module.default)
         setIsLoading(false)
       } catch (err) {

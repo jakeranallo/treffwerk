@@ -3,7 +3,7 @@ export async function fetchDocumentContent(documentId: string) {
     const response = await fetch("https://docs.treffwerk.com/api/documents.info", {
       method: "POST",
       headers: {
-        Authorization: "Bearer ol_api_BmMoMlChbmMCgovZuuU5wXOaCj1tPCJ4zZfzm0",
+        Authorization: `Bearer ${process.env.OUTLINE_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ id: documentId }),
@@ -38,7 +38,7 @@ export async function listDocuments() {
     const response = await fetch(requestUrl, {
       method: "POST",
       headers: {
-        Authorization: "Bearer ol_api_BmMoMlChbmMCgovZuuU5wXOaCj1tPCJ4zZfzm0",
+        Authorization: `Bearer ${process.env.OUTLINE_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({}),

@@ -4,9 +4,10 @@ import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { ToolLoader } from "@/components/tool-loader"
 import { getUserId } from "@/lib/auth"
+import { use } from "react"
 
-export default function ToolPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default function ToolPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const router = useRouter()
 
   useEffect(() => {
