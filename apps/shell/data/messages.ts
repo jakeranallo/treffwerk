@@ -2,6 +2,13 @@ import type { Message } from "@/types"
 
 export const messages: Message[] = [
   {
+    id: "welcome",
+    title: "Welcome to Treffwerk",
+    content: "Welcome to Treffwerk! We're excited to have you here. Explore our tools and start being productive.",
+    date: "2024-01-01",
+    read: false
+  },
+  {
     id: "msg-001",
     title: "Welcome to Treffwerk",
     content: "Thank you for joining Treffwerk! Explore our tools and discover how they can help your community.",

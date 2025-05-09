@@ -419,6 +419,9 @@ importers:
 
   tools/template:
     dependencies:
+      '@treffwerk/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@treffwerk/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -450,6 +453,9 @@ importers:
       jest:
         specifier: ^29.0.0
         version: 29.7.0(@types/node@22.15.17)
+      rimraf:
+        specifier: ^5.0.0
+        version: 5.0.10
       typescript:
         specifier: ^5.0.0
         version: 5.8.3

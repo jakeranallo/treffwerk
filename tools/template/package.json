@@ -1,16 +1,21 @@
 {
-  "name": "@treffwerk/template-tool",
+  "name": "@treffwerk/template",
   "version": "1.0.0",
-  "description": "A template for creating new Treffwerk tools",
+  "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc -w",
-    "test": "jest",
-    "lint": "eslint src --ext .ts,.tsx"
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
+    "@treffwerk/types": "workspace:*",
     "@treffwerk/ui": "workspace:*",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -19,10 +24,15 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "typescript": "^5.0.0",
+    "rimraf": "^5.0.0",
     "eslint": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "jest": "^29.0.0",
     "@types/jest": "^29.0.0"
-  }
+  },
+  "files": [
+    "dist",
+    "manifest.json"
+  ]
 } 

@@ -1,58 +1,14 @@
 {
-  "id": "template-tool",
+  "id": "template",
   "name": "Template Tool",
   "description": "A template for creating new Treffwerk tools",
   "version": "1.0.0",
-  "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://github.com/yourusername",
-    "organization": "Your Organization (optional)",
-    "role": "Developer",
-    "bio": "A brief bio about yourself and your experience"
-  },
-  "impact": {
-    "statement": "This tool helps users achieve X by providing Y functionality, contributing to Z goal.",
-    "goals": [
-      "Primary goal this tool helps achieve",
-      "Secondary goal or benefit"
-    ],
-    "metrics": [
-      "How success will be measured",
-      "What outcomes to expect"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/template-tool.git",
-    "branch": "main"
-  },
-  "icon": "template",
-  "screenshots": [
-    "screenshots/screenshot1.png",
-    "screenshots/screenshot2.png"
-  ],
-  "entry": "src/index.ts",
-  "dependencies": {
-    "@treffwerk/ui": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "capabilities": [
-    "data-storage",
-    "user-preferences"
-  ],
+  "icon": "code",
+  "entry": "src/index.tsx",
+  "author": "Treffwerk",
+  "homepage": "https://github.com/treffwerk/template",
   "languages": ["en"],
-  "tags": ["template", "example"],
+  "tags": ["template", "development"],
   "category": "development",
-  "documentation": "https://github.com/yourusername/template-tool/blob/main/README.md",
-  "homepage": "https://github.com/yourusername/template-tool",
-  "support": "https://github.com/yourusername/template-tool/issues",
-  "createdAt": "2024-03-08T00:00:00Z",
-  "updatedAt": "2024-03-08T00:00:00Z",
-  "license": "MIT",
-  "isOfficial": false,
-  "isCommunity": true
+  "license": "MIT"
 } 
