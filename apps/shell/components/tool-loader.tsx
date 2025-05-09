@@ -16,6 +16,12 @@ interface ToolLoaderProps {
 // Type to handle any React component props
 type AnyReactComponent = React.ComponentType<any>
 
+// Dynamic imports for each tool
+const toolImports = {
+  trefflesen: () => import("@treffwerk/trefflesen/src/Tool"),
+  "test-tool": () => import("@treffwerk/test-tool/src/index")
+}
+
 export function ToolLoader({ toolId }: ToolLoaderProps) {
   const { t } = useI18n()
   const [isLoading, setIsLoading] = useState(true)
@@ -32,28 +38,26 @@ export function ToolLoader({ toolId }: ToolLoaderProps) {
           throw new Error(t("tools.error.notFound"))
         }
 
-        // Load the tool's entry point
-        let component: AnyReactComponent
-        switch (toolId) {
-          case "trefflesen":
-            const module = await import("@treffwerk/trefflesen/src/Tool")
-            component = module.default
-            break
-          case "test-tool":
-            const testModule = await import("@treffwerk/test-tool/src/index")
-            component = testModule.default
-            break
-          // Add other tools here as needed
-          default:
-            throw new Error(t("tools.error.notFound"))
+        // Get the import function for this tool
+        const importTool = toolImports[toolId as keyof typeof toolImports]
+        if (!importTool) {
+          throw new Error(t("tools.error.notFound"))
         }
 
-        if (!component) {
+        try {
+          const module = await importTool()
+          const component = module.default
+
+          if (!component) {
+            throw new Error(t("tools.error.loadFailed"))
+          }
+
+          setToolComponent(() => component)
+          setIsLoading(false)
+        } catch (err) {
+          console.error("Failed to import tool:", err)
           throw new Error(t("tools.error.loadFailed"))
         }
-
-        setToolComponent(() => component)
-        setIsLoading(false)
       } catch (err) {
         console.error("Failed to load tool:", err)
         setError(t("tools.error.loadFailed"))
