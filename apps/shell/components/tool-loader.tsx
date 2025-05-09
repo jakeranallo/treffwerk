@@ -39,6 +39,10 @@ export function ToolLoader({ toolId }: ToolLoaderProps) {
             const module = await import("@treffwerk/trefflesen/src/Tool")
             component = module.default
             break
+          case "test-tool":
+            const testModule = await import("@treffwerk/test-tool/src/index")
+            component = testModule.default
+            break
           // Add other tools here as needed
           default:
             throw new Error(t("tools.error.notFound"))

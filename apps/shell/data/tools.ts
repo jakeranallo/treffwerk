@@ -14,4 +14,17 @@ export const tools: ToolManifest[] = [
     tags: ["reading", "content", "productivity"],
     category: "productivity"
   },
+  {
+    id: "test-tool",
+    name: "Test Tool",
+    description: "A test tool created from the template to verify tool loading",
+    version: "0.1.0",
+    icon: "test-tool",
+    entry: "/tools/test-tool/index.js",
+    author: "Test Author",
+    homepage: "https://treffwerk.org/tools/test-tool",
+    languages: ["en"],
+    tags: ["test", "template"],
+    category: "development"
+  }
 ]

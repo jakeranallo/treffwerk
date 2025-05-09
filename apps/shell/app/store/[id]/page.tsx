@@ -9,9 +9,11 @@ import { getToolById } from "@/lib/tools"
 import { getUserId } from "@/lib/auth"
 import { installTool, isToolInstalled } from "@/lib/installed-tools"
 import { useI18n } from "@/components/i18n-provider"
+import { use } from "react"
 
-export default function ToolDetailsPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default function ToolDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params)
+  const { id } = resolvedParams
   const [installed, setInstalled] = useState(false)
   const [installing, setInstalling] = useState(false)
   const router = useRouter()

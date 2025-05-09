@@ -1,4 +1,4 @@
-import { Book, Code } from "lucide-react"
+import { Book, Code, Beaker } from "lucide-react"
 
 interface ToolIconProps {
   icon: string
@@ -11,6 +11,8 @@ export function ToolIcon({ icon, className = "", size = 24 }: ToolIconProps) {
   switch (icon) {
     case "trefflesen":
       return <Book className={className} size={size} />;
+    case "test-tool":
+      return <Beaker className={className} size={size} />;
     default:
       return <Code className={className} size={size} />;
   }

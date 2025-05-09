@@ -1,0 +1,13 @@
+{
+  "id": "test-tool",
+  "name": "Test Tool",
+  "description": "A test tool created from the template to verify tool loading",
+  "version": "0.1.0",
+  "icon": "test-tool",
+  "entry": "/src/index.tsx",
+  "author": "Test Author",
+  "homepage": "https://treffwerk.org/tools/test-tool",
+  "languages": ["en"],
+  "tags": ["test", "template"],
+  "category": "development"
+} 
