@@ -11,6 +11,7 @@ export interface ToolManifest {
   languages: string[]
   tags: string[]
   category: string
+  license?: string
 }
 
 // User settings type
